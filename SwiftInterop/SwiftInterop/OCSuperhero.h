@@ -12,14 +12,14 @@
 
 @interface OCSuperhero : NSObject
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *superPower;
+@property (nonatomic, strong, nullable) NSString *name;
+@property (nonatomic, strong, nullable) NSString *superPower;
 
-@property (nonatomic, strong) OCVillain *archEnemy;
+@property (nonatomic, strong, nullable) OCVillain *archEnemy;
 
-- (void)populateHeroWithName:(NSString *)name
-                       power:(NSString *)power
-                       enemy:(OCVillain *)enemy
-                       error:(NSError **)error;
+- (void)populateHeroWithName:(NSString *_Nullable)name
+                       power:(NSString *_Nullable)power
+                       enemy:(OCVillain *_Nullable)enemy
+                       error:(NSError * _Nullable *)error;
 
 @end

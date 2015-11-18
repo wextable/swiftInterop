@@ -18,21 +18,32 @@ typedef NS_ENUM(NSInteger, OCSuperheroErrorType) {
 @implementation OCSuperhero
 
 
-- (void)populateHeroWithName:(NSString *)name
-                       power:(NSString *)power
-                       enemy:(OCVillain *)enemy
-                       error:(NSError **)error {
+//- (void)populateHeroWithName:(NSString *__nullable)name
+//                       power:(NSString *__nullable)power
+//                       enemy:(OCVillain *__nullable)enemy
+//                       error:(__autoreleasing NSError *__nullable *__nullable)error /*NS_SWIFT_NOTHROW*/ {
 
+- (void)populateHeroWithName:(NSString *_Nullable)name
+                       power:(NSString *_Nullable)power
+                       enemy:(OCVillain *_Nullable)enemy
+                       error:(NSError * _Nullable *)error {
+    
     if (!name) {
-        *error = [NSError errorWithDomain:@"OCSuperHero" code:OCSuperheroErrorTypeMissingName userInfo:nil];
+        if (error) {
+            *error = [NSError errorWithDomain:@"OCSuperHero" code:OCSuperheroErrorTypeMissingName userInfo:nil];
+        }
         return;
     }
     if (!power) {
-        *error = [NSError errorWithDomain:@"OCSuperHero" code:OCSuperheroErrorTypeMissingPower userInfo:nil];
+        if (error) {
+            *error = [NSError errorWithDomain:@"OCSuperHero" code:OCSuperheroErrorTypeMissingPower userInfo:nil];
+        }
         return;
     }
     if (!enemy) {
-        *error = [NSError errorWithDomain:@"OCSuperHero" code:OCSuperheroErrorTypeMissingEnemy userInfo:nil];
+        if (error) {
+            *error = [NSError errorWithDomain:@"OCSuperHero" code:OCSuperheroErrorTypeMissingEnemy userInfo:nil];
+        }
         return;
     }
     

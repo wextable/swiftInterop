@@ -40,27 +40,49 @@ class SwiftController: UIViewController {
     func populateSWHero(enemy: SWVillain?) {
         
         defer {
-            print("Well, we have at least tried to create a swift hero from a swift class...")
+            print("Swift:Swift - Well, we have at least tried to create a swift hero from a swift class...")
         }
         
         do {
-            try self.hero?.populate("Tim", power: "Explosions", enemy: enemy)
+            try self.hero?.populate("Superman", power: "Flying", enemy: enemy)
             
         } catch SuperHeroError.MissingVillain {
-            print("Dude, every hero needs an archenemy!")
+            print("Swift:Swift - Dude, every hero needs an archenemy!")
             return
             
         } catch {
-            print("Something is missing")
+            print("Swift:Swift - Something is missing")
             return
         }
         
-        print("\(self.hero?.name) really hates \(self.hero?.archEnemy?.name)")
+        print("Swift:Swift - Swift \(self.hero?.name) really hates Swift \(self.hero?.archEnemy?.name)")
     }
     
     func populateOCHero(enemy: OCVillain?) {
         
+        defer {
+            print("Swift:OBJC - Well, we have at least tried to create an objectiveC hero from a swift class...")
+        }
         
+        do {
+            var error: NSErrorPointer = NSErrorPointer()
+            try self.ocHero?.populateHeroWithName("Gus", power: "Losing games", enemy: nil, error: error)
+            
+            if error != nil {
+                print("Swift:OBJC - Should I say this? There was an error!")
+            }
+            
+            
+        } catch SuperHeroError.MissingVillain {
+            print("Swift:OBJC - Dude, every hero needs an archenemy!")
+            return
+            
+        } catch {
+            print("Swift:OBJC - Something is missing")
+            return
+        }
+                
+        print("Swift:OBJC - objectiveC \(self.hero?.name) really hates objectiveC \(self.hero?.archEnemy?.name)")
         
         
     }

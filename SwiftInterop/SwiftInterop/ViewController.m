@@ -15,6 +15,9 @@
 
 @interface ViewController ()
 @property (nonatomic, strong) SWSuperhero *hero;
+@property (nonatomic, strong) SWVillain *enemy;
+@property (nonatomic, strong) OCSuperhero *ocHero;
+@property (nonatomic, strong) OCVillain *ocEnemy;
 @end
 
 @implementation ViewController
@@ -23,22 +26,41 @@
     [super viewDidLoad];
 
     self.hero = [[SWSuperhero alloc] init];
+    self.enemy = [[SWVillain alloc] init];
+    self.enemy.name = @"Lex Luthor";
+    self.enemy.superPower = @"Diabolical Plans";
     
-    [self populateSWHeroWithoutEnemy];
+    self.ocHero = [[OCSuperhero alloc] init];
+    self.ocEnemy = [[OCVillain alloc] init];
+    self.ocEnemy.name = @"Nick Saban";
+    self.ocEnemy.superPower = @"Being the devil";
+    
+    
+    [self populateSWHeroWithEnemy:nil];
+    [self populateSWHeroWithEnemy:self.enemy];
+    
+    [self populateOCHeroWithEnemy:nil];
+    [self populateOCHeroWithEnemy:self.ocEnemy];
 }
 
-- (void)populateSWHeroWithoutEnemy {
+- (void)populateSWHeroWithEnemy:(SWVillain *)enemy {
     NSError *error;
-    [self.hero populate:@"Tim" power:@"Explosions" enemy:nil error:&error];
+    [self.hero populate:@"Superman" power:@"Flying" enemy:enemy error:&error];
     if (error) {
-        NSLog(@"Error populating Superhero: %@", error.domain);
+        NSLog(@"OBJC:Swift - Error populating Swift Superhero: %@", error.domain);
+    } else {
+        NSLog(@"OBJC:Swift - Swift %@ really hates Swift %@", self.hero.name, self.enemy.name);
     }
 }
 
-- (void)handleSwiftError:(NSError *)error {
-
-    // ???
-
+- (void)populateOCHeroWithEnemy:(OCVillain *)enemy {
+    NSError *error;
+    [self.ocHero populateHeroWithName:@"Gus Malzahn" power:@"Losing games" enemy:enemy error:&error];
+    if (error) {
+        NSLog(@"OBJC:OBJC - Error populating objectiveC Superhero: %@", error.domain);
+    } else {
+        NSLog(@"OBJC:OBJC - objectiveC %@ really hates objectiveC %@", self.hero.name, self.enemy.name);
+    }
 }
 
 @end
