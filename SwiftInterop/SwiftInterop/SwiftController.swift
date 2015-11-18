@@ -29,11 +29,11 @@ class SwiftController: UIViewController {
         self.ocEnemy?.name = "The Joker"
         self.ocEnemy?.superPower = "Face Paint"
         
-        populateSWHero(nil)
-        populateSWHero(self.enemy)
+//        populateSWHero(nil)
+//        populateSWHero(self.enemy)
         
         populateOCHero(nil)
-        populateOCHero(self.ocEnemy)
+//        populateOCHero(self.ocEnemy)
         
     }
     
@@ -64,26 +64,27 @@ class SwiftController: UIViewController {
             print("Swift:OBJC - Well, we have at least tried to create an objectiveC hero from a swift class...")
         }
         
-        do {
-            var error: NSErrorPointer = NSErrorPointer()
-            try self.ocHero?.populateHeroWithName("Gus", power: "Losing games", enemy: nil, error: error)
-            
-            if error != nil {
-                print("Swift:OBJC - Should I say this? There was an error!")
-            }
-            
-            
-        } catch SuperHeroError.MissingVillain {
-            print("Swift:OBJC - Dude, every hero needs an archenemy!")
-            return
-            
-        } catch {
-            print("Swift:OBJC - Something is missing")
-            return
-        }
-                
-        print("Swift:OBJC - objectiveC \(self.hero?.name) really hates objectiveC \(self.hero?.archEnemy?.name)")
+//        do {
+//            try self.ocHero?.populateHeroWithName(Gus Malzahn", power: "Losing games", enemy: enemy)
+//            
+//        } catch SuperHeroError.MissingVillain {
+//            print("Swift:OBJC - Dude, every hero needs an archenemy!")
+//            return
+//            
+//        } catch {
+//            print("Swift:OBJC - Something is missing")
+//            return
+//        }
         
+        var err: NSError? = nil
+        self.ocHero?.populateHeroWithName("Gus Malzahn", power: "Losing games", enemy:enemy, error: &err)
+        
+        if let error = err {
+            print("Swift:OBJC - error populating objectiveC hero: \(error)")
+        } else {
+            print("Swift:OBJC - objectiveC \(self.ocHero?.name) really hates objectiveC \(self.ocHero?.archEnemy?.name)")
+   
+        }
         
     }
 
