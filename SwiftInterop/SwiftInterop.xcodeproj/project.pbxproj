@@ -13,6 +13,12 @@
 		65B64A3C1BFC44000091161A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B64A3A1BFC44000091161A /* Main.storyboard */; };
 		65B64A3E1BFC44000091161A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B64A3D1BFC44000091161A /* Assets.xcassets */; };
 		65B64A411BFC44000091161A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B64A3F1BFC44000091161A /* LaunchScreen.storyboard */; };
+		65B64A4B1BFC44720091161A /* OCPublisher.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B64A4A1BFC44720091161A /* OCPublisher.m */; };
+		65B64A4E1BFC448E0091161A /* OCSuperhero.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B64A4D1BFC448E0091161A /* OCSuperhero.m */; };
+		65B64A511BFC44BB0091161A /* OCVillain.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B64A501BFC44BB0091161A /* OCVillain.m */; };
+		65B64A561BFC46510091161A /* SwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64A551BFC46510091161A /* SwiftController.swift */; };
+		65B64A581BFC46CA0091161A /* SWSuperhero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64A571BFC46CA0091161A /* SWSuperhero.swift */; };
+		65B64A5A1BFC47260091161A /* SWVillain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64A591BFC47260091161A /* SWVillain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,16 @@
 		65B64A3D1BFC44000091161A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65B64A401BFC44000091161A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65B64A421BFC44000091161A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65B64A491BFC44720091161A /* OCPublisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPublisher.h; sourceTree = "<group>"; };
+		65B64A4A1BFC44720091161A /* OCPublisher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPublisher.m; sourceTree = "<group>"; };
+		65B64A4C1BFC448E0091161A /* OCSuperhero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSuperhero.h; sourceTree = "<group>"; };
+		65B64A4D1BFC448E0091161A /* OCSuperhero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSuperhero.m; sourceTree = "<group>"; };
+		65B64A4F1BFC44BB0091161A /* OCVillain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCVillain.h; sourceTree = "<group>"; };
+		65B64A501BFC44BB0091161A /* OCVillain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCVillain.m; sourceTree = "<group>"; };
+		65B64A541BFC46510091161A /* SwiftInterop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftInterop-Bridging-Header.h"; sourceTree = "<group>"; };
+		65B64A551BFC46510091161A /* SwiftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftController.swift; sourceTree = "<group>"; };
+		65B64A571BFC46CA0091161A /* SWSuperhero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWSuperhero.swift; sourceTree = "<group>"; };
+		65B64A591BFC47260091161A /* SWVillain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWVillain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +74,12 @@
 		65B64A301BFC44000091161A /* SwiftInterop */ = {
 			isa = PBXGroup;
 			children = (
+				65B64A541BFC46510091161A /* SwiftInterop-Bridging-Header.h */,
+				65B64A531BFC452A0091161A /* Views */,
+				65B64A521BFC45050091161A /* Controllers */,
+				65B64A481BFC44400091161A /* Model */,
 				65B64A341BFC44000091161A /* AppDelegate.h */,
 				65B64A351BFC44000091161A /* AppDelegate.m */,
-				65B64A371BFC44000091161A /* ViewController.h */,
-				65B64A381BFC44000091161A /* ViewController.m */,
 				65B64A3A1BFC44000091161A /* Main.storyboard */,
 				65B64A3D1BFC44000091161A /* Assets.xcassets */,
 				65B64A3F1BFC44000091161A /* LaunchScreen.storyboard */,
@@ -77,6 +95,38 @@
 				65B64A321BFC44000091161A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65B64A481BFC44400091161A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				65B64A491BFC44720091161A /* OCPublisher.h */,
+				65B64A4A1BFC44720091161A /* OCPublisher.m */,
+				65B64A4C1BFC448E0091161A /* OCSuperhero.h */,
+				65B64A4D1BFC448E0091161A /* OCSuperhero.m */,
+				65B64A4F1BFC44BB0091161A /* OCVillain.h */,
+				65B64A501BFC44BB0091161A /* OCVillain.m */,
+				65B64A571BFC46CA0091161A /* SWSuperhero.swift */,
+				65B64A591BFC47260091161A /* SWVillain.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		65B64A521BFC45050091161A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				65B64A371BFC44000091161A /* ViewController.h */,
+				65B64A381BFC44000091161A /* ViewController.m */,
+				65B64A551BFC46510091161A /* SwiftController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		65B64A531BFC452A0091161A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +199,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B64A4B1BFC44720091161A /* OCPublisher.m in Sources */,
+				65B64A561BFC46510091161A /* SwiftController.swift in Sources */,
+				65B64A511BFC44BB0091161A /* OCVillain.m in Sources */,
+				65B64A5A1BFC47260091161A /* SWVillain.swift in Sources */,
+				65B64A581BFC46CA0091161A /* SWSuperhero.swift in Sources */,
 				65B64A391BFC44000091161A /* ViewController.m in Sources */,
 				65B64A361BFC44000091161A /* AppDelegate.m in Sources */,
+				65B64A4E1BFC448E0091161A /* OCSuperhero.m in Sources */,
 				65B64A331BFC44000091161A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,10 +317,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftInterop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mobileforming.SwiftInterop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftInterop/SwiftInterop-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -272,10 +331,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftInterop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mobileforming.SwiftInterop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftInterop/SwiftInterop-Bridging-Header.h";
 			};
 			name = Release;
 		};

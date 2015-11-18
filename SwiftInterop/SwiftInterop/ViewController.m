@@ -7,21 +7,38 @@
 //
 
 #import "ViewController.h"
+#import "OCPublisher.h"
+#import "OCSuperhero.h"
+#import "OCVillain.h"
+
+#import "SwiftInterop-Swift.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) SWSuperhero *hero;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    self.hero = [[SWSuperhero alloc] init];
+    
+    [self populateSWHeroWithoutEnemy];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)populateSWHeroWithoutEnemy {
+    NSError *error;
+    [self.hero populate:@"Tim" power:@"Explosions" enemy:nil error:&error];
+    if (error) {
+        NSLog(@"Error populating Superhero: %@", error.domain);
+    }
+}
+
+- (void)handleSwiftError:(NSError *)error {
+
+    // ???
+
 }
 
 @end
